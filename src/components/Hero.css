@@ -5,7 +5,7 @@
   flex-direction: column;
   justify-content: center;
   padding: 8rem 0 6rem;
-  overflow: hidden;
+  overflow-x: hidden;
 }
 
 .hero-bg {
@@ -77,6 +77,8 @@
 
 .hero-text {
   min-width: 0;
+  container-type: inline-size;
+  overflow: visible;
 }
 
 .hero-visual {
@@ -172,16 +174,20 @@
 
 .hero-name {
   font-family: var(--font-display);
-  font-size: clamp(3.5rem, 12vw, 8rem);
+  font-size: clamp(2.25rem, 13cqi, 4.5rem);
   font-weight: 800;
-  line-height: 0.95;
-  letter-spacing: -0.03em;
+  line-height: 1.05;
+  letter-spacing: -0.02em;
   margin-bottom: 1.5rem;
+  max-width: 100%;
+  overflow-wrap: break-word;
+  word-break: break-word;
 }
 
 .hero-name-line {
   display: block;
   animation: fadeUp 0.8s ease both;
+  max-width: 100%;
 }
 
 .hero-name-line:first-child {
@@ -368,6 +374,10 @@
   .hero-layout {
     grid-template-columns: 1fr;
     gap: 3rem;
+  }
+
+  .hero-name {
+    font-size: clamp(2.75rem, 11vw, 4.75rem);
   }
 
   .hero-visual {
