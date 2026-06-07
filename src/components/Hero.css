@@ -70,7 +70,7 @@
 
 .hero-layout {
   display: grid;
-  grid-template-columns: 1fr 420px;
+  grid-template-columns: 1fr 380px;
   gap: 3rem;
   align-items: center;
 }
@@ -174,14 +174,10 @@
 
 .hero-name {
   font-family: var(--font-display);
-  font-size: clamp(2.25rem, 13cqi, 4.5rem);
   font-weight: 800;
   line-height: 1.05;
-  letter-spacing: -0.02em;
   margin-bottom: 1.5rem;
   max-width: 100%;
-  overflow-wrap: break-word;
-  word-break: break-word;
 }
 
 .hero-name-line {
@@ -191,10 +187,15 @@
 }
 
 .hero-name-line:first-child {
+  font-size: clamp(2.5rem, 11cqi, 4.25rem);
+  letter-spacing: -0.02em;
   animation-delay: 0.1s;
 }
 
 .hero-name-accent {
+  font-size: clamp(1.75rem, 8.8cqi, 3.25rem);
+  letter-spacing: -0.03em;
+  white-space: nowrap;
   color: transparent;
   background: linear-gradient(135deg, var(--green-glow), var(--green-mid));
   -webkit-background-clip: text;
@@ -377,7 +378,15 @@
   }
 
   .hero-name {
-    font-size: clamp(2.75rem, 11vw, 4.75rem);
+    font-size: unset;
+  }
+
+  .hero-name-line:first-child {
+    font-size: clamp(2.75rem, 12vw, 4.5rem);
+  }
+
+  .hero-name-accent {
+    font-size: clamp(2rem, 9vw, 3.5rem);
   }
 
   .hero-visual {
