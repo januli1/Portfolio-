@@ -1,0 +1,65 @@
+.journal-intro {
+  color: var(--text-muted);
+  max-width: 600px;
+  margin-bottom: 3rem;
+  font-size: 1rem;
+  line-height: 1.7;
+}
+
+.journal-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+  gap: 1.25rem;
+}
+
+.journal-card {
+  position: relative;
+  padding: 2rem 1.75rem 1.75rem;
+  background: var(--green-darkest);
+  border: 1px solid var(--border);
+  border-radius: 16px;
+  overflow: hidden;
+  transition: all 0.35s;
+}
+
+.journal-card::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  height: 3px;
+  background: linear-gradient(90deg, var(--green-mid), var(--green-bright));
+  transform: scaleX(0);
+  transform-origin: left;
+  transition: transform 0.4s;
+}
+
+.journal-card:hover {
+  border-color: var(--border-bright);
+  transform: translateY(-3px);
+}
+
+.journal-card:hover::after {
+  transform: scaleX(1);
+}
+
+.journal-index {
+  font-family: var(--font-mono);
+  font-size: 0.7rem;
+  color: var(--green-mid);
+  letter-spacing: 0.1em;
+}
+
+.journal-card h3 {
+  font-family: var(--font-display);
+  font-size: 1.05rem;
+  font-weight: 600;
+  margin: 0.75rem 0 0.6rem;
+}
+
+.journal-card p {
+  font-size: 0.85rem;
+  color: var(--text-muted);
+  line-height: 1.6;
+}
