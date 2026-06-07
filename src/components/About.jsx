@@ -1,6 +1,12 @@
-import { about, modules } from '../data/portfolio';
+import { about, modules, photos, personal, assetUrl } from '../data/portfolio';
 import { useReveal } from '../hooks/useReveal';
 import './About.css';
+
+const gallery = [
+  { src: photos.hero, alt: 'Professional portrait', label: 'Professional' },
+  { src: photos.outdoor, alt: 'Outdoor portrait', label: 'Campus Life' },
+  { src: photos.campus, alt: 'SLIIT campus', label: 'At SLIIT' },
+];
 
 export default function About() {
   const ref = useReveal();
@@ -14,6 +20,16 @@ export default function About() {
             <h2 className="section-title">
               Crafting <span>impactful</span> technology
             </h2>
+
+            <div className="about-gallery">
+              {gallery.map((item) => (
+                <figure key={item.src} className="about-gallery-item">
+                  <img src={assetUrl(item.src)} alt={`${personal.name} — ${item.alt}`} />
+                  <figcaption>{item.label}</figcaption>
+                </figure>
+              ))}
+            </div>
+
             <div className="about-text">
               {about.split('\n\n').map((para, i) => (
                 <p key={i}>{para}</p>

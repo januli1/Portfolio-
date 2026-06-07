@@ -10,6 +10,14 @@ export const personal = {
   education: 'BSc (Hons) Information Technology — SLIIT',
 };
 
+export const photos = {
+  hero: 'images/januli-professional.png',
+  outdoor: 'images/januli-outdoor.png',
+  campus: 'images/januli-campus.png',
+};
+
+export const assetUrl = (path) => `${import.meta.env.BASE_URL}${path}`;
+
 export const about = `Hello, I'm Januli Samaraweera, an undergraduate student currently pursuing a BSc (Hons) in Information Technology at the Sri Lanka Institute of Information Technology (SLIIT).
 
 I am passionate about software engineering, data engineering, and artificial intelligence, with hands-on experience in developing web and mobile applications. I have worked on multiple projects including MERN stack systems, Android applications, and AI-based research solutions.
