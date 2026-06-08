@@ -21,6 +21,11 @@ export const resume = {
   title: 'Januli Samaraweera — Resume',
 };
 
+export const certificatesDoc = {
+  file: 'certificates/certificates.pdf',
+  title: 'Certificates & Courses',
+};
+
 export const assetUrl = (path) => `${import.meta.env.BASE_URL}${path}`;
 
 export const about = `Hello, I'm Januli Samaraweera, an undergraduate student currently pursuing a BSc (Hons) in Information Technology at the Sri Lanka Institute of Information Technology (SLIIT).
@@ -30,6 +35,8 @@ I am passionate about software engineering, data engineering, and artificial int
 Currently, I am engaged in developing an AI-driven Smart Cinnamon Growth Monitoring System, where I focus on integrating IoT and machine learning for smart agriculture solutions.
 
 I have technical skills in Java, JavaScript, C, C++, and SQL, along with web technologies such as HTML, CSS, React, and Node.js. I also have experience working with tools and platforms like Git, Firebase, and AWS.
+
+Beyond technology, I am also trained in music and hold two Visharad qualifications — one in vocal performance and one in instrumental music.
 
 My career goal is to specialize in software development and data engineering, while contributing to innovative, scalable, and impactful technology solutions in the IT industry.`;
 
@@ -171,8 +178,9 @@ export const careerPlan = [
 ];
 
 export const certificates = [
-  'Open University Courses',
-  'Visharad Exams',
-  'University of Moratuwa Courses',
-  'AI / ML Course',
+  { title: 'Open University Courses', category: 'Academic' },
+  { title: 'Visharad — Vocal', category: 'Music' },
+  { title: 'Visharad — Instrumental', category: 'Music' },
+  { title: 'University of Moratuwa Courses', category: 'Academic' },
+  { title: 'AI / ML Course', category: 'Technology' },
 ];

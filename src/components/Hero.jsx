@@ -1,11 +1,13 @@
 import { personal, photos, assetUrl } from '../data/portfolio';
 import { useResume } from '../context/ResumeContext';
+import { useCertificates } from '../context/CertificatesContext';
 import './Hero.css';
 
 const techMarquee = ['React', 'Node.js', 'Java', 'Python', 'MongoDB', 'AWS', 'Firebase', 'AI/ML', 'IoT', 'Android'];
 
 export default function Hero() {
-  const { openResume, openResumeNewWindow } = useResume();
+  const { openResume } = useResume();
+  const { openCertificates } = useCertificates();
 
   return (
     <section className="hero" id="home">
@@ -35,7 +37,7 @@ export default function Hero() {
             <div className="hero-actions">
               <a href="#projects" className="btn-primary">View My Work</a>
               <button type="button" className="btn-ghost" onClick={openResume}>View CV</button>
-              <button type="button" className="btn-ghost" onClick={openResumeNewWindow}>Open CV in New Window</button>
+              <button type="button" className="btn-ghost" onClick={openCertificates}>Certificates</button>
               <a href="#contact" className="btn-ghost">Get In Touch</a>
             </div>
 

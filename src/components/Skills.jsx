@@ -1,4 +1,5 @@
 import { skills, certificates } from '../data/portfolio';
+import { useCertificates } from '../context/CertificatesContext';
 import { useReveal } from '../hooks/useReveal';
 import './Skills.css';
 
@@ -12,6 +13,7 @@ const skillGroups = [
 
 export default function Skills() {
   const ref = useReveal();
+  const { openCertificates } = useCertificates();
 
   return (
     <section className="skills section" id="skills">
@@ -40,13 +42,26 @@ export default function Skills() {
         </div>
 
         <div className="certificates reveal">
-          <h3 className="certificates-title">Certificates & Courses</h3>
+          <div className="certificates-header">
+            <h3 className="certificates-title">Certificates & Courses</h3>
+            <button type="button" className="certificates-view-btn" onClick={openCertificates}>
+              View All Certificates
+            </button>
+          </div>
           <div className="certificates-grid">
             {certificates.map((cert) => (
-              <div key={cert} className="certificate-card">
+              <button
+                key={cert.title}
+                type="button"
+                className="certificate-card"
+                onClick={openCertificates}
+              >
                 <span className="cert-badge">✓</span>
-                <span>{cert}</span>
-              </div>
+                <span className="certificate-card-text">
+                  <span className="certificate-card-title">{cert.title}</span>
+                  <span className="certificate-card-category">{cert.category}</span>
+                </span>
+              </button>
             ))}
           </div>
         </div>

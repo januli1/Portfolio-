@@ -1,4 +1,5 @@
 import { about, modules, photos, personal, assetUrl } from '../data/portfolio';
+import { useCertificates } from '../context/CertificatesContext';
 import { useReveal } from '../hooks/useReveal';
 import './About.css';
 
@@ -10,6 +11,7 @@ const gallery = [
 
 export default function About() {
   const ref = useReveal();
+  const { openCertificates } = useCertificates();
 
   return (
     <section className="about section" id="about">
@@ -35,6 +37,10 @@ export default function About() {
                 <p key={i}>{para}</p>
               ))}
             </div>
+
+            <button type="button" className="about-cert-btn" onClick={openCertificates}>
+              View Certificates
+            </button>
           </div>
 
           <div className="about-right">
@@ -60,6 +66,16 @@ export default function About() {
               <div>
                 <h4>Current Focus</h4>
                 <p>Smart Cinnamon Growth Monitoring — integrating IoT & machine learning for smart agriculture.</p>
+              </div>
+            </div>
+
+            <div className="about-highlight about-highlight-music">
+              <div className="highlight-ring">
+                <span>🎵</span>
+              </div>
+              <div>
+                <h4>Music & Arts</h4>
+                <p>Two Visharad qualifications — vocal performance and instrumental music.</p>
               </div>
             </div>
           </div>

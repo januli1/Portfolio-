@@ -1,5 +1,6 @@
 import { useEffect } from 'react';
 import { ResumeProvider } from './context/ResumeContext';
+import { CertificatesProvider } from './context/CertificatesContext';
 import Navbar from './components/Navbar';
 import Hero from './components/Hero';
 import About from './components/About';
@@ -36,18 +37,20 @@ export default function App() {
 
   return (
     <ResumeProvider>
-      <Navbar />
-      <main>
-        <Hero />
-        <About />
-        <Experience />
-        <Projects />
-        <Skills />
-        <Journal />
-        <Career />
-        <Contact />
-      </main>
-      <Footer />
+      <CertificatesProvider>
+        <Navbar />
+        <main>
+          <Hero />
+          <About />
+          <Experience />
+          <Projects />
+          <Skills />
+          <Journal />
+          <Career />
+          <Contact />
+        </main>
+        <Footer />
+      </CertificatesProvider>
     </ResumeProvider>
   );
 }
