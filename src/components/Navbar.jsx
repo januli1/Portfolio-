@@ -37,25 +37,27 @@ export default function Navbar() {
           <span className="logo-text">Januli</span>
         </a>
 
-        <ul className={`navbar-links ${menuOpen ? 'open' : ''}`}>
-          {links.map((link) => (
-            <li key={link.href}>
-              <a href={link.href} onClick={() => setMenuOpen(false)}>
-                {link.label}
-              </a>
-            </li>
-          ))}
-        </ul>
+        <div className="navbar-end">
+          <ul className={`navbar-links ${menuOpen ? 'open' : ''}`}>
+            {links.map((link) => (
+              <li key={link.href}>
+                <a href={link.href} onClick={() => setMenuOpen(false)}>
+                  {link.label}
+                </a>
+              </li>
+            ))}
+          </ul>
 
-        <button type="button" className="navbar-cv" onClick={() => { openResume(); setMenuOpen(false); }}>
-          View CV
-        </button>
-
-        <button type="button" className="navbar-cv" onClick={() => { openCertificates(); setMenuOpen(false); }}>
-          Certificates
-        </button>
-
-        <a href="#contact" className="navbar-cta">Let's Talk</a>
+          <div className="navbar-actions">
+            <button type="button" className="navbar-cv" onClick={() => { openResume(); setMenuOpen(false); }}>
+              View CV
+            </button>
+            <button type="button" className="navbar-cv" onClick={() => { openCertificates(); setMenuOpen(false); }}>
+              Certificates
+            </button>
+            <a href="#contact" className="navbar-cta">Let's Talk</a>
+          </div>
+        </div>
 
         <button
           className={`menu-toggle ${menuOpen ? 'active' : ''}`}
