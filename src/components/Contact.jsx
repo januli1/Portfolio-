@@ -1,9 +1,11 @@
 import { personal } from '../data/portfolio';
+import { useResume } from '../context/ResumeContext';
 import { useReveal } from '../hooks/useReveal';
 import './Contact.css';
 
 export default function Contact() {
   const ref = useReveal();
+  const { openResume, openResumeNewWindow } = useResume();
 
   return (
     <section className="contact section" id="contact">
@@ -45,6 +47,16 @@ export default function Contact() {
               <span className="contact-link-value">{personal.linkedin}</span>
               <span className="contact-arrow">→</span>
             </a>
+            <button type="button" className="contact-link" onClick={openResume}>
+              <span className="contact-link-label">Resume</span>
+              <span className="contact-link-value">View CV</span>
+              <span className="contact-arrow">→</span>
+            </button>
+            <button type="button" className="contact-link" onClick={openResumeNewWindow}>
+              <span className="contact-link-label">Resume</span>
+              <span className="contact-link-value">Open CV in New Window</span>
+              <span className="contact-arrow">→</span>
+            </button>
           </div>
         </div>
       </div>

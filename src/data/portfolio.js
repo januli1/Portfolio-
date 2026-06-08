@@ -16,6 +16,11 @@ export const photos = {
   campus: 'images/januli-campus.png',
 };
 
+export const resume = {
+  file: 'cv/januli-resume.pdf',
+  title: 'Januli Samaraweera — Resume',
+};
+
 export const assetUrl = (path) => `${import.meta.env.BASE_URL}${path}`;
 
 export const about = `Hello, I'm Januli Samaraweera, an undergraduate student currently pursuing a BSc (Hons) in Information Technology at the Sri Lanka Institute of Information Technology (SLIIT).

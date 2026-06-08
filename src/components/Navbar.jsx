@@ -1,4 +1,5 @@
 import { useEffect, useState } from 'react';
+import { useResume } from '../context/ResumeContext';
 import './Navbar.css';
 
 const links = [
@@ -13,6 +14,7 @@ const links = [
 export default function Navbar() {
   const [scrolled, setScrolled] = useState(false);
   const [menuOpen, setMenuOpen] = useState(false);
+  const { openResume } = useResume();
 
   useEffect(() => {
     const onScroll = () => setScrolled(window.scrollY > 60);
@@ -42,6 +44,10 @@ export default function Navbar() {
             </li>
           ))}
         </ul>
+
+        <button type="button" className="navbar-cv" onClick={() => { openResume(); setMenuOpen(false); }}>
+          View CV
+        </button>
 
         <a href="#contact" className="navbar-cta">Let's Talk</a>
 
